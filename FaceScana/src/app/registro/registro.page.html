@@ -1,0 +1,41 @@
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+
+<ion-content class="auth-bg">
+  <div class="auth-container">
+    <div class="logo-container">
+      <img src="assets/adanlogo.png" alt="Logo" class="main-logo">
+    </div>
+
+    <form [formGroup]="registroForm" (ngSubmit)="onRegister()">
+      <ion-card class="glass-card">
+        <ion-card-content>
+          <ion-item lines="none" class="custom-input">
+            <ion-input label="Nombre" labelPlacement="floating" formControlName="nombre" type="text" placeholder="Ej. Juan Pérez"></ion-input>
+          </ion-item>
+          <ion-note color="danger" *ngIf="registroForm.get('nombre')?.touched && registroForm.get('nombre')?.invalid">Obligatorio.</ion-note>
+
+          <ion-item lines="none" class="custom-input">
+            <ion-input label="Correo" labelPlacement="floating" formControlName="correo" type="email" placeholder="Example: AdanDeLara@gmail.com"></ion-input>
+          </ion-item>
+          <ion-note color="danger" *ngIf="registroForm.get('correo')?.touched && registroForm.get('correo')?.invalid">Correo inválido.</ion-note>
+
+          <ion-item lines="none" class="custom-input">
+            <ion-input label="Contraseña" labelPlacement="floating" formControlName="contrasena" type="password" placeholder="Example: LaTeresa"></ion-input>
+          </ion-item>
+          <ion-note color="danger" *ngIf="registroForm.get('contrasena')?.touched && registroForm.get('contrasena')?.invalid">Mínimo 6 caracteres.</ion-note>
+
+          <ion-button expand="block" type="submit" [disabled]="registroForm.invalid" class="main-btn" shape="round">
+            Registrarse
+          </ion-button>
+
+          <div class="ion-text-center ion-margin-top">
+            <ion-text color="medium">¿Ya tienes cuenta? </ion-text>
+            <ion-button fill="clear" size="small" routerLink="/login" class="link-btn">Inicia Sesión</ion-button>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </form>
+  </div>
+</ion-content>

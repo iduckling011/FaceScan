@@ -1,0 +1,7 @@
+{
+  "name": "FaceScana",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

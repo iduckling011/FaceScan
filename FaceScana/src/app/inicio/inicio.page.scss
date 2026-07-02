@@ -1,0 +1,119 @@
+*{
+  box-sizing:border-box;
+}
+
+.background{
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at top left,#3a4eff 0%,transparent 40%),
+    radial-gradient(circle at bottom right,#00c2ff 0%,transparent 35%),
+    #0b1020;
+  z-index:-1;
+}
+
+.home-content{
+  --background:transparent;
+}
+
+.hero{
+  padding:50px 20px 20px;
+  text-align:center;
+  color:white;
+}
+
+.avatar{
+  width:100px;
+  height:100px;
+  margin:auto;
+  background:rgba(255,255,255,.08);
+  backdrop-filter:blur(20px);
+  border:1px solid rgba(255,255,255,.2);
+
+  ion-icon{
+    font-size:100px;
+    color:white;
+  }
+}
+
+.hero h1{
+  margin-top:20px;
+  margin-bottom:5px;
+  font-size:18px;
+  opacity:.8;
+}
+
+.hero h2{
+  margin:0 0 15px;
+  font-size:28px;
+  font-weight:700;
+}
+
+.glass-card,
+.service-card{
+  margin:16px;
+  border-radius:20px;
+  background:rgba(255,255,255,.08);
+  backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,.1);
+  box-shadow:0 8px 30px rgba(0,0,0,.3);
+}
+
+.card-header{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:white;
+  font-weight:600;
+}
+
+.glass-card p{
+  color:#bfc7d5;
+  margin-top:10px;
+}
+
+.section-title{
+  color:white;
+  font-size:20px;
+  font-weight:700;
+  margin:30px 20px 10px;
+}
+
+.service{
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+
+.service-icon{
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:rgba(255,255,255,.1);
+
+  ion-icon{
+    font-size:28px;
+    color:#5aa9ff;
+  }
+}
+
+.service h3{
+  color:white;
+  margin:0;
+  font-size:16px;
+}
+
+.service p{
+  color:#a9b2c4;
+  margin-top:5px;
+  font-size:13px;
+}
+
+.logout-btn{
+  margin:30px 16px 50px;
+  --border-radius:18px;
+  height:55px;
+}

@@ -1,0 +1,39 @@
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+
+<ion-content class="auth-bg">
+  <div class="auth-container fade-in">
+    <div class="logo-container">
+      <img src="assets/adanlogo.png" alt="Logo" class="main-logo">
+    </div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="iniciarSesion()">
+      <ion-card class="glass-card">
+        <ion-card-content class="auth-content">
+          
+          <ion-item lines="none" class="custom-input">
+            <ion-icon name="mail-outline" slot="start"></ion-icon>
+            <ion-input formControlName="email" type="email" placeholder="Example: AdanDeLara@gmail.com"></ion-input>
+          </ion-item>
+
+          <ion-item lines="none" class="custom-input">
+            <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+            <ion-input formControlName="password" type="password" placeholder="Example: LaTeresa"></ion-input>
+          </ion-item>
+
+          <ion-button type="submit" expand="block" shape="round" class="main-btn" [disabled]="!loginForm.valid">
+            Ingresar
+          </ion-button>
+          
+          <div class="divider">o</div>
+
+          <ion-button type="button" expand="block" fill="clear" class="link-btn" (click)="irRegistro()">
+            ¿No tienes cuenta? Regístrate
+          </ion-button>
+        
+        </ion-card-content>
+      </ion-card>
+    </form>
+  </div>
+</ion-content>
