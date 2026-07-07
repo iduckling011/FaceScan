@@ -1,75 +1,42 @@
-<div class="background"></div>
+<div class="bg"></div>
 
 <ion-content class="home-content">
-
   <div class="hero">
-
     <ion-avatar class="avatar">
-      <ion-icon name="person-circle-outline"></ion-icon>
+      <img src="assets/icon/favicon.png" alt="Logo" />
     </ion-avatar>
-
-    <h1>Bienvenido</h1>
+    <h1>Bienvenido de nuevo</h1>
     <h2>{{ usuario }}</h2>
-
-    <ion-chip color="success">
-      <ion-icon name="checkmark-circle-outline"></ion-icon>
-      <span>Sesión activa</span>
-    </ion-chip>
-
   </div>
 
   <ion-card class="glass-card">
     <ion-card-content>
-
       <div class="card-header">
         <ion-icon name="time-outline"></ion-icon>
         <span>Último acceso</span>
       </div>
-
-      <p>
-        {{ fecha }}
-      </p>
-
+      <p>{{ fecha }}</p>
     </ion-card-content>
   </ion-card>
 
-  <div class="section-title">
-    Estado del sistema
-  </div>
+  <div class="section-title">Estado del sistema</div>
 
-  <ion-card
-    class="service-card"
-    *ngFor="let acceso of accesos">
-
+  <ion-card class="service-card" *ngFor="let acceso of accesos">
     <ion-card-content>
-
       <div class="service">
-
         <div class="service-icon">
           <ion-icon [name]="acceso.icono"></ion-icon>
         </div>
-
         <div>
           <h3>{{ acceso.titulo }}</h3>
           <p>{{ acceso.descripcion }}</p>
         </div>
-
       </div>
-
     </ion-card-content>
   </ion-card>
 
-  <ion-button
-    expand="block"
-    class="logout-btn"
-    (click)="cerrarSesion()">
-
-    <ion-icon
-      slot="start"
-      name="log-out-outline">
-    </ion-icon>
-
+  <ion-button expand="block" class="logout-btn" (click)="cerrarSesion()">
+    <ion-icon slot="start" name="log-out-outline"></ion-icon>
     Cerrar sesión
   </ion-button>
-
 </ion-content>
