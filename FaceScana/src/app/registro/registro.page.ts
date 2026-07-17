@@ -17,7 +17,7 @@ import { RouterLink } from '@angular/router';
     ReactiveFormsModule, 
     RouterLink,
     IonContent, IonCard, IonCardContent, IonItem, IonInput, 
-    IonButton, IonIcon, IonNote, IonList, IonText
+    IonButton, IonNote, IonText
   ]
 })
 export class RegistroPage implements OnInit {
