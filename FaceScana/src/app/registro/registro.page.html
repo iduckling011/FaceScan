@@ -3,14 +3,18 @@
 <div class="bg bg3"></div>
 
 <ion-content class="auth-bg">
-  <div class="auth-container">
+  <div class="auth-container fade-in">
+    
+    <!-- Bloque de marca idéntico al Login -->
     <div class="logo-container">
       <img src="assets/adanlogo.png" alt="Logo" class="main-logo">
+      <h1>AppFacialADL</h1>
     </div>
 
     <form [formGroup]="registroForm" (ngSubmit)="onRegister()">
       <ion-card class="glass-card">
         <ion-card-content>
+          
           <ion-item lines="none" class="custom-input">
             <ion-input label="Nombre" labelPlacement="floating" formControlName="nombre" type="text" placeholder="Ej. Juan Pérez"></ion-input>
           </ion-item>
@@ -26,7 +30,8 @@
           </ion-item>
           <ion-note color="danger" *ngIf="registroForm.get('contrasena')?.touched && registroForm.get('contrasena')?.invalid">Mínimo 6 caracteres.</ion-note>
 
-          <ion-button expand="block" type="submit" [disabled]="registroForm.invalid" class="main-btn" shape="round">
+          <!-- Botón unificado con animación -->
+          <ion-button expand="block" type="submit" [disabled]="registroForm.invalid" class="main-btn">
             Registrarse
           </ion-button>
 
@@ -34,6 +39,7 @@
             <ion-text color="medium">¿Ya tienes cuenta? </ion-text>
             <ion-button fill="clear" size="small" routerLink="/login" class="link-btn">Inicia Sesión</ion-button>
           </div>
+          
         </ion-card-content>
       </ion-card>
     </form>

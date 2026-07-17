@@ -1,4 +1,4 @@
-/* Fondo animado (Original) */
+/* Fondo y contenedor base */
 .bg {
   animation: slide 3s ease-in-out infinite alternate;
   background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
@@ -8,41 +8,54 @@
 .bg3 { animation-duration: 5s; }
 @keyframes slide { 0% { transform: translateX(-25%); } 100% { transform: translateX(25%); } }
 
-/* Contenedor responsivo */
 .auth-bg { --background: transparent; }
-.auth-container {
-  display: flex; flex-direction: column; justify-content: center; align-items: center; 
-  height: 100%; padding: 15px; /* Menos padding para aprovechar espacio */
+.auth-container { display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; padding: 15px; }
+
+/* Ajustes de Marca */
+.logo-container {
+  text-align: center;
+  margin-bottom: 25px; /* Espacio antes de la tarjeta */
 }
 
-/* Tarjeta compacta */
+.main-logo { 
+  width: 140px; /* Un poco más grande */
+  height: auto; 
+  display: block;
+  margin: 0 auto; 
+  animation: fadeInDown 1s ease-out; 
+}
+
+.logo-container h1 {
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  margin: -5px 0 0 0; /* Negativo para pegarlo a la imagen */
+  font-size: 28px; /* Más grande y llamativo */
+}
+
+@keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Tarjeta y elementos */
 .glass-card {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(15px);
   border-radius: 20px;
   width: 100%;
-  max-width: 350px; /* Reducido para que no se vea gigante */
+  max-width: 350px;
   padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-/* Animación de entrada para el logo */
-.main-logo {
-  width: 300px; /* Tamaño más manejable */
-  height: auto;
-  margin-bottom: 15px;
-  animation: fadeInDown 1s ease-out; /* Animación de entrada */
+.custom-input { --background: #f4f4f4; --padding-start: 15px; margin-bottom: 10px; border-radius: 12px; min-height: 45px; }
+
+.main-btn {
+  margin-top: 10px;
+  height: 55px;
+  --border-radius: 18px;
+  --background: #09f;
+  transition: transform 0.1s ease-in-out;
 }
 
-@keyframes fadeInDown {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.custom-input {
-  --background: #f4f4f4;
-  --padding-start: 15px;
-  margin-bottom: 10px; /* Más compacto */
-  border-radius: 12px;
-  min-height: 45px; /* Altura optimizada */
-}
-
-.main-btn { margin-top: 10px; }
+.main-btn:active { transform: scale(0.95); }
+.link-btn { --color: #09f; }
+.divider { text-align: center; margin: 10px 0; color: #888; font-size: 0.9rem; }

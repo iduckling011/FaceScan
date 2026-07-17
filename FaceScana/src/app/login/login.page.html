@@ -4,27 +4,16 @@
 
 <ion-content class="auth-bg">
   <div class="auth-container fade-in">
+    
+    <!-- Bloque de marca más compacto -->
     <div class="logo-container">
       <img src="assets/adanlogo.png" alt="Logo" class="main-logo">
+      <h1>AppFacialADL</h1>
     </div>
 
-    <ion-card class="glass-card" *ngIf="biometriaActiva">
-      <ion-card-content class="auth-content ion-text-center">
-        
-        <ion-icon name="scan-circle-outline" style="font-size: 100px; color: #09f; margin-top: 15px; margin-bottom: 10px;"></ion-icon>
-        <h2 style="font-weight: 800; color: #222; margin-bottom: 25px;">Inicio Facial</h2>
-        
-        <ion-button expand="block" shape="round" class="main-btn" (click)="loginBiometrico()">
-          Escanear Rostro
-        </ion-button>
-
-      </ion-card-content>
-    </ion-card>
-
-    <form [formGroup]="loginForm" (ngSubmit)="iniciarSesion()" *ngIf="!biometriaActiva">
+    <form [formGroup]="loginForm" (ngSubmit)="iniciarSesion()">
       <ion-card class="glass-card">
-        <ion-card-content class="auth-content">
-          
+        <ion-card-content>
           <ion-item lines="none" class="custom-input">
             <ion-icon name="mail-outline" slot="start"></ion-icon>
             <ion-input formControlName="email" type="email" placeholder="Ejemplo: AdanDeLara@gmail.com"></ion-input>
@@ -35,7 +24,7 @@
             <ion-input formControlName="password" type="password" placeholder="Ejemplo: LaTeresa"></ion-input>
           </ion-item>
 
-          <ion-button type="submit" expand="block" shape="round" class="main-btn" [disabled]="!loginForm.valid">
+          <ion-button type="submit" expand="block" class="main-btn" [disabled]="!loginForm.valid">
             Ingresar
           </ion-button>
           
@@ -44,10 +33,8 @@
           <ion-button type="button" expand="block" fill="clear" class="link-btn" (click)="irRegistro()">
             ¿No tienes cuenta? Regístrate
           </ion-button>
-        
         </ion-card-content>
       </ion-card>
     </form>
-
   </div>
 </ion-content>

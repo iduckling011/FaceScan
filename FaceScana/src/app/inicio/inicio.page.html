@@ -1,4 +1,6 @@
 <div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
 
 <ion-content class="home-content">
   <div class="hero">
@@ -21,7 +23,8 @@
 
   <div class="section-title">Estado del sistema</div>
 
-  <ion-card class="service-card" *ngFor="let acceso of accesos">
+  <!-- Todas las tarjetas ahora usan la misma clase glass-card -->
+  <ion-card class="glass-card" *ngFor="let acceso of accesos">
     <ion-card-content>
       <div class="service">
         <div class="service-icon">

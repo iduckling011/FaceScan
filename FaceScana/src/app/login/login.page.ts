@@ -13,8 +13,7 @@ import {
   IonInput, 
   IonButton,
   NavController,
-  ToastController 
-} from '@ionic/angular/standalone';
+  ToastController, IonNote, IonText } from '@ionic/angular/standalone';
 
 import { addIcons } from 'ionicons';
 import { scanCircleOutline, mailOutline, lockClosedOutline } from 'ionicons/icons';
@@ -27,7 +26,7 @@ import { NativeBiometric } from '@capgo/capacitor-native-biometric';
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
   standalone: true,
-  imports: [
+  imports: [IonText, IonNote, 
     CommonModule, // <-- Agregado
     ReactiveFormsModule,
     IonContent, 
